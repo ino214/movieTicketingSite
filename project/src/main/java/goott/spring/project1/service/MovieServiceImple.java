@@ -30,4 +30,10 @@ public class MovieServiceImple implements MovieService{
 		return dao.select(movieId);
 	}
 
+	@Override
+	public String readMovieName(String movieId) {
+		LOGGER.info("readMovieName() 호출 : movieId = " + movieId);
+		return dao.selectMovieName(movieId);
+	}
+
 }

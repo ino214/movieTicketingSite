@@ -26,6 +26,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 	where ${movieId} = #{movieId}
 	 </select>
 	 
+	 <select id="select_movieName">
+	 	select ${movieName} from ${movie}
+	 	where ${movieId} = #{movieId}
+	 </select>
 </mapper>
 
 

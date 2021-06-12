@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import goott.spring.project1.domain.MovieVO;
+import goott.spring.project1.domain.ReserveSqlVO;
 import goott.spring.project1.domain.ReviewVO;
 import goott.spring.project1.service.MovieService;
 import goott.spring.project1.service.ReviewService;
@@ -26,7 +27,12 @@ public class SeatController {
 	private MovieService movieService;
 	
 	@GetMapping("/seatReserve")
-	public void seatList() {
+	public void seatList(Model model, ReserveSqlVO vo, String branchName) {
 		LOGGER.info("seatList() 호출");
+		for(int i = 0; i<vo.getSeatCount(); i++) {
+			
+		}
+		String movieName = movieService.readMovieName(vo.getMovieId());
+		
 	}
 }

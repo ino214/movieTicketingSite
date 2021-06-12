@@ -7,16 +7,17 @@ public class SeatVO {
 	private int seatNum; // 좌석 No
 	private char seatReserveYn; // 예약가능_Yes or No
 	private String reserveId; // 예매 id
-	
+	private String startTime;
 	public SeatVO() {}
 
-	public SeatVO(String seatId, String theaterId, int seatNum, char seatReserveYn, String reserveId) {
+	public SeatVO(String seatId, String theaterId, int seatNum, char seatReserveYn, String reserveId, String startTime) {
 		super();
 		this.seatId = seatId;
 		this.theaterId = theaterId;
 		this.seatNum = seatNum;
 		this.seatReserveYn = seatReserveYn;
 		this.reserveId = reserveId;
+		this.startTime = startTime;
 	}
 
 	public String getSeatId() {
@@ -59,10 +60,18 @@ public class SeatVO {
 		this.reserveId = reserveId;
 	}
 
+	public String getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
 	@Override
 	public String toString() {
 		return "SeatVO [seatId=" + seatId + ", theaterId=" + theaterId + ", seatNum=" + seatNum + ", seatReserveYn="
-				+ seatReserveYn + ", reserveId=" + reserveId + "]";
+				+ seatReserveYn + ", reserveId=" + reserveId + ", startTime=" + startTime + "]";
 	}
 
 	

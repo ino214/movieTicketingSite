@@ -33,5 +33,11 @@ public class MovieDAOImple implements MovieDAO{
 		LOGGER.info("select() 호출 : movieId = " + movieId);
 		return sqlSession.selectOne(NAMESPACE + ".select_movieId", movieId);
 	}
+
+	@Override
+	public String selectMovieName(String movieId) {
+		LOGGER.info("selectMovieName() 호출 : movieId = " + movieId);
+		return sqlSession.selectOne(NAMESPACE + ".select_movieName", movieId);
+	}
 	
 }
