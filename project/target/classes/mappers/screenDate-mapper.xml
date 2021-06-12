@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="goott.spring.project1.ScreenDateMapper">
+	 <select id="select_screenDate" resultType="ScreenDateVO">
+		select * from ${screenDate}
+		where to_char(${startTime}, 'YYYY-MM-DD') = to_char(#{startTime}, 'YYYY-MM-DD')
+		order by ${startTime} desc;
+	</select>
+	
+	<select id="select_screenDate_branch" parameterType="hashMap" resultType="ReserveSqlVO">
+		select s.${movieId},
+		to_char(s.${startTime}, 'yyyy/MM/dd HH24:mi') as ${startTime}, 
+		to_char(s.${endTime}, 'yyyy/MM/dd HH24:mi') as ${endTime}, t.${branchId}, t.${theaterId}, 
+		(select count(*)
+		from ${seat} se 
+		where se.theater_id = t.theater_id 
+		and se.${startTime} = s.${startTime}) as ${seatCount}, 
+		t.${screenIn}
+		from ${screenDate} s, ${theater} t
+		where s.${theaterId} like #{branchId}||'%' 
+		and t.${theaterId} = s.${theaterId} 
+		and to_char(s.${startTime},'yyyy/MM/dd') = #{screenDate} 
+		and s.${movieId} = #{movieId}
+	</select><!-- 상영 시작시간 ~ 종료시간(mm:ss), 영화제목, 지점 이름, 상영관 이름, 남은 좌석 수/좌석 수
+	select * from screen_date
+		 where theater_id like 'GGN%';
+	이 데이터를 담을 VO 하나 더만들기 -->
+	
+	<select id="select_test">
+		select to_char(s.start_time, 'yyyy/MM/dd HH24:mi') as start_Time, t.branch_id, t.theater_id, 
+		(select count(*) as count 
+		from seat se 
+		where se.theater_id = t.theater_id and se.start_time = s.start_time) as seat_count, 
+		t.SCREEN_IN
+		from screen_date s, theater t
+		where s.theater_id like 'GGN%'
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+

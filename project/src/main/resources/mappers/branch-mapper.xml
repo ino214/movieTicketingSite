@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="goott.spring.project1.BranchMapper">
+	<select id="select_branch" resultType="BranchVO">
+		select * from ${branch} where ${branchCity} = #{branchCity}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+

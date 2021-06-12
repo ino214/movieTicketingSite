@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="goott.spring.project1.SeatMapper">
+	 
+	 <select id="select_seat" resultType="SeatVO">
+	 	select * from ${seat}
+	 	where ${theaterId} = #{theaterId}
+	 </select>
+	 
+	 <update id="update_seat_reserveYn">
+	 	update ${seat} set ${seatReserveYn} = #{seatReserveYn}, ${reserveId} = NULL
+	 	where ${reserveId} = #{reserveId}
+	 </update>
+	 
+	 <update id="update_select_seat">
+	 	update ${seat} set ${reserveId} = #{reserveId}
+	 	where ${seatId} = #{seatId}
+	 </update>
+</mapper>
+
+
+
+
+
+
+
+
+

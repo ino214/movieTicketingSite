@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="goott.spring.project1.MovieMapper">
+	 
+	 <insert id="insert">
+	 	insert into ${test_board} (${title}, ${content}, ${userid})
+	 	values (#{title}, #{content}, #{userid})
+	 </insert>
+	 
+	 <!-- 
+	 resultType : select를 했을때 리턴하는 레코드 타입 선언
+	 - 일반적으로 패키지 이름을 포함한 전체 경로의 클래스 이름을 사용해야 함
+	 - mybatis-config.xml에서 typeAliases 속성을 package로 정의하여
+	   클래스 이름만 사용
+	  -->	 
+	 
+	 <select id="select_all" resultType="MovieVO">
+	 	select * from ${movie}
+	 	order by ${movieId}
+	 </select>
+	 
+	 <select id="select_movieId" resultType="MovieVO">
+	 	select * from ${movie}
+	 	where ${movieId} = #{movieId}
+	 </select>
+	 
+</mapper>
+
+
+
+
+
+
+
+
+

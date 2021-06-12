@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="goott.spring.project1.ReviewMapper">
+	 
+	 <select id="select_review_count" parameterType="String" resultType="Integer">
+	 	select count(#{movieId}) from ${review} where ${movieId} = #{movieId}
+	 </select>
+	 
+	 <insert id="insert_review">
+	 	insert into ${review}(${reviewId}, ${movieId}, ${userId}, ${reviewContent}) values(#{reviewId}||review_seq.nextval, #{movieId}, #{userId}, #{reviewContent})
+	 </insert>
+	 
+	 <select id="select_review" resultType="ReviewVO">
+	 	select * from ${review} where ${movieId} = #{movieId}
+	 	order by ${reviewDate}
+	 </select>
+	 
+	 <update id="update_review">
+	 	update ${review} set ${reviewContent} = #{reviewContent}
+	 	where ${reviewId} = #{reviewId}
+	 </update>
+	 
+	 <delete id="delete_review">
+	 	delete from ${review} where ${reviewId} = #{reviewId}
+	 </delete>
+</mapper>
+
+
+
+
+
+
+
+
+
