@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h1>예약</h1>
-	screen
+	screenIn
 </body>
 </html>
