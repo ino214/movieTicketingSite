@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import goott.spring.project1.domain.ReserveSqlVO;
 import goott.spring.project1.domain.SeatVO;
 
 @Component
@@ -22,9 +23,9 @@ public class SeatDAOImple implements SeatDAO{
 	private SqlSession sqlSession;
 	
 	@Override
-	public List<SeatVO> select_seat(String theaterId) {
-		LOGGER.info("select_seat 호출 : theaterId = " + theaterId);
-		return sqlSession.selectList(NAMESPACE + ".select_seat", theaterId);
+	public List<Integer> select_seat(ReserveSqlVO vo) {
+		LOGGER.info("select_seat 호출 : vo = " + vo);
+		return sqlSession.selectList(NAMESPACE + ".select_seatNum", vo);
 	}
 
 	@Override

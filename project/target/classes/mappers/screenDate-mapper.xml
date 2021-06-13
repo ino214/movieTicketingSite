@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		(select count(*)
 		from ${seat} se 
 		where se.theater_id = t.theater_id 
-		and se.${startTime} = s.${startTime}) as ${seatCount}, 
+		and to_char(se.${startTime}, 'yyyy/MM/dd HH24:mi') = to_char(s.${startTime}, 'yyyy/MM/dd HH24:mi')) as ${seatCount}, 
 		t.${screenIn}
 		from ${screenDate} s, ${theater} t
 		where s.${theaterId} like #{branchId}||'%' 

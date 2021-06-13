@@ -4,9 +4,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="goott.spring.project1.SeatMapper">
 	 
-	 <select id="select_seat" resultType="SeatVO">
-	 	select * from ${seat}
-	 	where ${theaterId} = #{theaterId}
+	 <select id="select_seatNum" resultType="integer">
+	 	select ${seatNum} from ${seat}
+	 	where ${theaterId} = #{theaterId} and 
+	 	to_char(${startTime}, 'yyyy/MM/dd HH24:mi') = #{startTime}
+	 	order by ${seatNum}
 	 </select>
 	 
 	 <update id="update_seat_reserveYn">

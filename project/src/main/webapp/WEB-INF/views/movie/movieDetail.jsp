@@ -245,7 +245,7 @@ ul, li{
 				<p style="font-size: 25px; line-height: 0;">${vo.movieEngTitle}</p>
 			</div><!-- end title -->
 			<div class="post">
-				<img alt="${vo.movieName} 포스트" src="../resources/img/${vo.movieId}.jpg">
+				<img alt="${vo.movieName} 포스터" src="../resources/img/${vo.movieId}.jpg">
 				<br> <!-- 예매 -->
 				<a href="../reserve/movieTicketing?movieId=${vo.movieId}"><strong>예매</strong></a>
 			</div> <!-- end post -->

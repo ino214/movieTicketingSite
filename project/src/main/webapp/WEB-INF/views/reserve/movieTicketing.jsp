@@ -296,8 +296,11 @@ a{
 						var list = '';
 						$(jsonData).each(function(){
 							console.log(this);
+							var JSONObj = JSON.stringify(this);
+							
+							console.log(JSONObj);
 							list += '<div class="reserve_date_item">'
-								+ '<a href="../seat/seatReserve">' 
+								+ '<a href="../seat/seatReserve?startTime=' + this.startTime + '&endTime=' + this.endTime + '&theaterId=' + this.theaterId + '&movieId=' + this.movieId + '&movieName=' + movieName + '&screenIn=' + this.screenIn + '&branchName=' + branchName + '">' 
 								+ '<div class="reserve_date_item_cont" style="width: 60px; font-size: 12px;"><p>' + this.startTime.substring(11,16) + '</p>~' 
 								+ this.endTime.substring(11,16) + '</div>'
 								+ '<div class="reserve_date_item_cont" style="width: 279px; padding-left: 10px;">' + movieName + '</div>'
@@ -305,12 +308,21 @@ a{
 								+ '<br>' + this.theaterId.substring(5, 6) + '관<br>'
 								+ this.seatCount + '/' + this.screenIn + '</p></div>'
 								+ '</a>'
+								+ '<input type="hidden" class="movieId" value=' + this.movieId + '>'
+								+ '<input type="hidden" class="startTime" value=' + this.startTime + '>'
+								+ '<input type="hidden" class="endTime" value=' + this.endTime + '>'
+								+ '<input type="hidden" class="branchId" value=' + this.branchId + '>'
+								+ '<input type="hidden" class="theaterId" value=' + this.theaterId + '>'
+								+ '<input type="hidden" class="seatCount" value=' + this.seatCount + '>'
+								+ '<input type="hidden" class="screenIn" value=' + this.screenIn + '>'
+								+ '<input type="hidden" class="branchName" value=' + branchName + '>'
 								+ '</div>';
 						});// end each()
 						$('.reserve_date_list').html(list);
 					} // end callback()
 			   	); // end getJSON()
 		}// end reserveDate()
+			
 	});
 </script>
 </html>
