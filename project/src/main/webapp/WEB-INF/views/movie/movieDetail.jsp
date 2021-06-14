@@ -130,7 +130,7 @@ ul, li{
 	width: 100%;
 }
 .cont_nav_li{
-	width: 33.33%;
+	width: 50%;
 }
 .cont_nav_li a{
 	text-decoration: none;
@@ -141,6 +141,7 @@ ul, li{
 	border: 1px solid #efefef;
 	border-bottom: 1px solid #5d14cc;
 	line-height: 40px;
+	color: #000000;
 }
 
 .on a{
@@ -268,8 +269,7 @@ ul, li{
 				<div class="detail_cont_nav">
 					<ul class="cont_nav_ul">
 					<li class="cont_nav_li" id="summary"><a href="movieDetail?movieId=${vo.movieId}&section=movieSummary.jsp">주요 정보</a></li><!-- 여백 없애기
-					 --><li class="cont_nav_li" id="review"><a href="movieDetail?movieId=${vo.movieId}&section=movieReview.jsp">관람평</a></li><!-- 여백 없애기
-					 --><li class="cont_nav_li"><a href="#">트레일러</a></li>
+					 --><li class="cont_nav_li" id="review"><a href="movieDetail?movieId=${vo.movieId}&section=movieReview.jsp">관람평</a></li>
 					</ul>
 				</div>
 				<div class="detail_cont_section">

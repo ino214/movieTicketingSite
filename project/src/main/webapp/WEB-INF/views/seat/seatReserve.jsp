@@ -126,7 +126,12 @@
 				screenIn
 				<c:forEach var="numList" items="${seatNumList}" varStatus="status">
 					<c:if test="${status.index % 15 eq 0}"><br></c:if> 
-					<div class="seat_item"><input type="button" value="${numList}"></div>
+					<c:if test="${numList eq 0}">
+						<div class="seat_item"><input type="button" value="" disabled="disabled"></div>
+					</c:if>
+					<c:if test="${numList ne 0}">
+						<div class="seat_item"><input type="button" value="${numList}"></div>
+					</c:if>
 				</c:forEach>
 			</div>
 		</div>
@@ -175,7 +180,7 @@
 					$('#footer_btn2').attr('disabled', false);
 				}
 			}else if(on >= sele && hasOn == false){
-				alert('모든 좌석을 선택하셨습니다');
+				alert('이미 모든 좌석을 선택하셨습니다');
 			}
 			if(hasOn == true){
 				$(this).removeClass('on');
