@@ -123,7 +123,7 @@
 				</select>
 			</div>
 			<div class="seat_list">
-				screenIn
+				screen
 				<c:forEach var="numList" items="${seatNumList}" varStatus="status">
 					<c:if test="${status.index % 15 eq 0}"><br></c:if> 
 					<c:if test="${numList eq 0}">
