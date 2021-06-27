@@ -46,47 +46,47 @@ root-context.xml의 DataSource bean의 URL property를 본인 DB 설정에 맞�
 MovieController.java에서 데이터베이스에 있는 영화정보를 받아와 movieList.jsp에서 출력해 주었습니다.   
 (Controller -> Service -> DAO -> DB -> DAO -> Service -> Controller)   
 DB에 있는 모든 영화를 가져와 간단한 정보와 함께 출력해 주었습니다.   
-- movieList.jsp
+- movieList.jsp   
 ![movieList.jsp](/README_img/movieList.jpg)
 
 ### 영화 정보
 
 movieList.jsp에서 선택한 영화의 정보를 자세한 정보를 DB에서 MovieController.java를 통해 가져와 movieDetail.jsp에서 출력해 주었습니다.   
 movieDetail.jsp(영화 정보)에서 jsp:include태그를 이용해 줄거리(movieSummary.jsp)와 관람평(movieReview.jsp)를 출력했습니다.
-- movieDetail.jsp
+- movieDetail.jsp   
 ![movieDetail.jsp](/README_img/movieDetail.jpg)
 
 ### 영화정보(줄거리)
 
 더보기 버튼 클릭시 전체 줄거리 출력   
 JQuery와 CSS를 이용하여 더보기 버튼을 구현했습니다.   
-- movieSummary.jsp
+- movieSummary.jsp   
 ![movieSummary.jsp](/README_img/movieSummary.jpg)
 
 ### 영화정보(관람평)
 
 댓글 조회, 입력, 수정, 삭제기능 구현   
 각각의 기능은 ajax를 이용하여 값을 넘겨주고 REST API를 이용한 Controller에서 값을 처리해 movieReview.jsp에서 출력해 주었습니다.   
-- movieReview.jsp
+- movieReview.jsp   
 ![movieReview.jsp](/README_img/movieReview.jpg)
 
 ### 예매 정보 입력
 
 영화와 극장을 선택해야 예매가능 시간이 출력되도록 했습니다.   
 극장과 시간의 출력은 JQuery와 REST API를 이용하여 구현했습니다.   
-- movieTicketing.jsp
+- movieTicketing.jsp   
 ![movieTicketing.jsp](/README_img/movieTicketing.jpg)
 
 ### 좌석 선택
 
 좌석은 Controller에서 배열과 2중 for문을 이용하여 해당 극장의 좌석 수만큼 생성해 값을 넘겨주고, JSTL을 이용하여 seatReserve.jsp에서 출력해 주었습니다.   
-- seatReserve.jsp
+- seatReserve.jsp   
 ![seatReserve.jsp](/README_img/seatReserve.jpg)
 
 ### 결제
 
 결제는 아임포트 결제 API를 사용하여 구현하였습니다.
-- payment.jsp
+- payment.jsp   
 ![payment.jsp](/README_img/payment.jpg)
 
 
@@ -248,4 +248,4 @@ JSP내에 JS를 작성하다보니 JSP와 JS의 처리 순서가 다른단 것�
 - 현재 팀원과 의견차이로 프로젝트를 병합하지 못했고 그러다 보니 예매정보를 DB에 저장하는 기능을 구현하지 못했습니다.   
   팀원과는 꾸준히 커뮤니케이션을 하고 있으니 시간이 될때마다 병합하며 모든 구현을 끝내려고 합니다.   
 
-** 해당 프로젝트는 여전히 진행중에 있습니다.
+** 해당 프로젝트는 여전히 진행중에 있습니다.**
